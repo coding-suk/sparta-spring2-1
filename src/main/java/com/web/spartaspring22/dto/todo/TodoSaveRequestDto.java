@@ -1,4 +1,4 @@
-package com.web.spartaspring22.dto;
+package com.web.spartaspring22.dto.todo;
 
 import lombok.Getter;
 
@@ -7,6 +7,6 @@ public class TodoSaveRequestDto {
 
     private String title;
     private String contents;
-    private String userName;
+    private Long userId;
 
 }

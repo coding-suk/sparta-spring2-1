@@ -1,4 +1,4 @@
-package com.web.spartaspring22.dto;
+package com.web.spartaspring22.dto.comment;
 
 import lombok.Getter;
 
@@ -6,6 +6,6 @@ import lombok.Getter;
 public class CommentSaveRequestDto {
 
     private String comments;
-    private String username;
+    private Long id;
 
 }

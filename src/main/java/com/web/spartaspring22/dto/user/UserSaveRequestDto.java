@@ -1,4 +1,4 @@
-package com.web.spartaspring22.dto;
+package com.web.spartaspring22.dto.user;
 
 import lombok.Getter;
 
