@@ -1,11 +1,13 @@
 package com.web.spartaspring22.controller;
 
+import com.web.spartaspring22.config.JwtUtil;
 import com.web.spartaspring22.dto.user.UserDetailResponseDto;
 import com.web.spartaspring22.dto.user.UserSaveRequestDto;
 import com.web.spartaspring22.dto.user.UserSaveResponseDto;
 import com.web.spartaspring22.dto.user.UserSimpleResponseDto;
 import com.web.spartaspring22.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,10 +17,18 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+    private final JwtUtil jwtUtil;
 
     @PostMapping("/users")
-    public UserSaveResponseDto saveUser(@RequestBody UserSaveRequestDto requestDto) {
-        return userService.saveUser(requestDto);
+    public ResponseEntity<UserSaveResponseDto> saveUser(@RequestBody UserSaveRequestDto requestDto) {
+        UserSaveResponseDto responseDto = userService.saveUser(requestDto);
+
+        String token = jwtUtil.createToken(requestDto);
+
+        return ResponseEntity.ok(responseDto)
+                .header("Authorization", "Bearer " + token)
+                .build();
+
     }
 
     @GetMapping("/users")

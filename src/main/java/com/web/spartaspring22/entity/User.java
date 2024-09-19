@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @NoArgsConstructor
+@Table(name = "users")
 public class User extends Timestamped{
 
     @Id

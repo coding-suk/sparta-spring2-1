@@ -1,5 +1,6 @@
 package com.web.spartaspring22.service;
 
+import com.web.spartaspring22.config.JwtUtil;
 import com.web.spartaspring22.dto.user.UserDetailResponseDto;
 import com.web.spartaspring22.dto.user.UserSaveRequestDto;
 import com.web.spartaspring22.dto.user.UserSaveResponseDto;
@@ -19,6 +20,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final JwtUtil jwtUtil;
 
     @Transactional
     public UserSaveResponseDto saveUser(UserSaveRequestDto requestDto) {
