@@ -33,7 +33,9 @@ public class UserService {
 
         User savedUser = userRepository.save(newUser);
 
-        return new UserSaveResponseDto(savedUser.getId(), savedUser.getUsername(), savedUser.getEmail());
+        String token = jwtUtil.createToken(savedUser.getId());
+
+        return new UserSaveResponseDto(savedUser.getId(), savedUser.getUsername(), savedUser.getEmail(), token);
 
     }
 

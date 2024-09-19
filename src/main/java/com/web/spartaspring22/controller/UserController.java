@@ -23,9 +23,10 @@ public class UserController {
     public ResponseEntity<UserSaveResponseDto> saveUser(@RequestBody UserSaveRequestDto requestDto) {
         UserSaveResponseDto responseDto = userService.saveUser(requestDto);
 
-        String token = jwtUtil.createToken(requestDto);
+        String token = jwtUtil.createToken(requestDto.getUserId());
 
-        return ResponseEntity.ok(responseDto)
+        return ResponseEntity
+                .ok()
                 .header("Authorization", "Bearer " + token)
                 .build();
 
