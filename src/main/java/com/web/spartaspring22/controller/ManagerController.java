@@ -1,8 +1,8 @@
 package com.web.spartaspring22.controller;
 
-import com.web.spartaspring22.dto.ManagerSaveRequestDto;
-import com.web.spartaspring22.dto.ManagerSaveResponseDto;
-import com.web.spartaspring22.dto.ManagerSimpleResponseDto;
+import com.web.spartaspring22.dto.manager.ManagerSaveRequestDto;
+import com.web.spartaspring22.dto.manager.ManagerSaveResponseDto;
+import com.web.spartaspring22.dto.manager.ManagerSimpleResponseDto;
 import com.web.spartaspring22.service.ManagerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,8 @@
 package com.web.spartaspring22.service;
 
-import com.web.spartaspring22.dto.ManagerSaveRequestDto;
-import com.web.spartaspring22.dto.ManagerSaveResponseDto;
-import com.web.spartaspring22.dto.ManagerSimpleResponseDto;
+import com.web.spartaspring22.dto.manager.ManagerSaveRequestDto;
+import com.web.spartaspring22.dto.manager.ManagerSaveResponseDto;
+import com.web.spartaspring22.dto.manager.ManagerSimpleResponseDto;
 import com.web.spartaspring22.dto.user.UserDto;
 import com.web.spartaspring22.entity.Manager;
 import com.web.spartaspring22.entity.Todo;
